@@ -1,0 +1,43 @@
+<!--/* Thymeleaf templating engine, Each token will be replaced by their respective titles in the resulting page. */-->
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+<head>
+    <title>Hapus Siswa</title>
+</head>
+<body>
+<div layout:fragment="content">
+    
+    <h3>Hapus Siswa</h3>
+
+    <form class="form-horizontal" th:object="${Siswa}" method="post">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">NIS</label>
+            <div class="col-sm-10">
+                <p class="form-control-static" th:text="*{nis}"></p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label"> Nama</label>
+            <div class="col-sm-10">
+                <p class="form-control-static" th:text="*{nama}">nama</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Tempat Lahir</label>
+            <div class="col-sm-10">
+                <p class="form-control-static" th:text="*{Tempat_Lahir}"></p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <a th:href="@{/siswa/list}" class="btn btn-default" role="button">
+                    <span aria-hidden="true"></span>Batal
+                </a>
+                <button type="submit" class="btn btn-danger">Hapus </button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

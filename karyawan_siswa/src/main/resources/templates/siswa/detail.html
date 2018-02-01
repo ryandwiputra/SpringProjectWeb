@@ -1,0 +1,130 @@
+<!--/* Thymeleaf templating engine, Each token will be replaced by their respective titles in the resulting page. */-->
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{layout}">
+<head>
+<title>Tambah Kegiatan</title>
+</head>
+<body>
+	<div layout:fragment="breadcrumb">
+		<h1>Detail Siswa</h1>
+		<ol class="breadcrumb">
+			<li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+			<li class="active">Siswa</li>
+		</ol>
+	</div>
+	<div layout:fragment="content">
+		<div class="row">
+			<div class="col-md-10">
+				<div class="box box-primary">
+					<div class="box-header with-border">
+						<h3 class="box-title">&nbsp;</h3>
+					</div>
+					<ul class="nav nav-tabs">
+						<li class="active"><a data-toggle="tab" href="#home">Siswa</a></li>
+						<li><a data-toggle="tab" href="#menu1">Orang Tua</a></li>
+						<li><a data-toggle="tab" href="#menu1">Wali</a></li>
+
+					</ul>
+					<form class="form-horizontal" role="form" th:object="${siswa}"
+						method="post">
+						<!--				<div class="box-body"> -->
+						<div class="tab-content">
+							<div id="home" class="tab-pane fade in active">
+								<br />
+								<br />
+
+								<div class="form-group">
+									<label class="control-label col-sm-2" for="nama"> NIS</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" th:field="*{nis}"
+											id="nis" name="nis" placeholder="Nomor Induk Siswa" />
+									</div>
+								</div>
+								<div class=" form-group">
+									<label for="alamat" class="control-label col-sm-2">Nama</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" th:field="*{nama}"
+											id="nama" name="nama" placeholder="Nama Siswa" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="alamat" class="control-label col-sm-2">Tempat
+										Lahir</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control"
+											th:field="*{Tempat_Lahir}" id="Tempat_Lahir"
+											name="Tempat_Lahir" placeholder="Tempat Lahir" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="jeniskelamin" class="control-label col-sm-2">Jenis
+										Kelamin </label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control"
+											th:field="*{Jenis_Kelamin}" id="Jenis_Kelamin"
+											name="Jenis_Kelamin" placeholder="Jenis Kelamin" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="agama" class="control-label col-sm-2">Agama
+									</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" th:field="*{Agama}"
+											id="Agama" name="Agama" placeholder="Agama" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="anak_ke" class="control-label col-sm-2">Anak
+										Ke </label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" th:field="*{Anak_Ke}"
+											id="Anak_ke" name="Anak_ke" placeholder="Anak ke" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="saudara" class="control-label col-sm-2">Saudara
+									</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control" th:field="*{Saudara}"
+											id="Tempat_Lahir" name="Tempat_Lahir"
+											placeholder="Tempat Lahir" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="alamat" class="control-label col-sm-2">Asal
+										Sekolah </label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control"
+											th:field="*{Asal_Sekolah}" id="Asal Sekolah"
+											name="Asal Sekolah" placeholder="Asal Sekolah" />
+									</div>
+								</div>
+							</div>
+							<div id="menu1" class="tab-pane fade">
+							<br/>
+							<br/>
+								<div class="form-group">
+									<label for="alamat" class="control-label col-sm-2">Nama Ayah</label>
+									<div class="col-sm-10">
+										<input type="text" class="form-control"
+											th:field="*{Asal_Sekolah}" id="Asal Sekolah"
+											name="Asal Sekolah" placeholder="Asal Sekolah" />
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<a th:href="@{/siswa/list}" class="btn btn-default" role="button">
+								<span aria-hidden="true"></span>Batal
+							</a>
+							<button type="submit" class="box-title btn btn-primary">Simpan</button>
+						</div>
+						<!--  			</div> -->
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
